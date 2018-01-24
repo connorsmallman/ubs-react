@@ -11,5 +11,6 @@ body {
   
   .rectangle {
     background: #fff !important;
+    opacity: 1 !important;
   }
 }

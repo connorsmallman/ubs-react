@@ -8,6 +8,7 @@ const Inner = styled.div`
   position: absolute;
   top: ${props => props.y}px;
   width: ${props => props.width}px;
+  opacity: 0.8;
 `;
 
 export default function Rectange(props) {
