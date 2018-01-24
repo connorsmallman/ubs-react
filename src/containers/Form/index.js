@@ -45,7 +45,7 @@ export class Form extends Component {
 
     const total = this.props.width + this.props.sumOfRectangles;
 
-    if (total > window.innerWidth) {
+    if (total > this.props.innerWidth) {
       console.log('Error: sum of all rectangles should not extend window width');
       return;
     }
