@@ -2,6 +2,16 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { mapStateToProps, mapDispatchToProps } from './state';
 import NumberInput from '../../components/NumberInput';
+import Label from '../../components/Label';
+import Button from '../../components/Button';
+import styled from 'styled-components';
+
+const Container = styled.form`
+  top: 0;
+  left: 0;
+  position: fixed;
+  width: 100%;
+`;
 
 export class Form extends Component {
   constructor() {
@@ -55,32 +65,25 @@ export class Form extends Component {
 
   render() {
     return (
-      <form onSubmit={this.addRectangle} >
-        <label>
+      <Container onSubmit={this.addRectangle} >
+        <Label>
           Width
-        </label>
+        </Label>
         <NumberInput onChange={this.updateWidth} value={this.props.width} />
-        <label>
+        <Label>
           Height
-        </label>
+        </Label>
         <NumberInput onChange={this.updateHeight} value={this.props.height} />
-        <div>
-          <div>
-            <label>
-              Position
-            </label>
-          </div>
-          <label>
-            x:
-            <NumberInput onChange={this.updatePositionX} value={this.props.x} />
-          </label>
-          <label>
-            y: 
-            <NumberInput onChange={this.updatePositionY} value={this.props.y} />
-          </label>
-        </div>
-        <button type='submit'>Add</button>
-      </form>
+        <Label>
+          Position X:
+        </Label>
+        <NumberInput onChange={this.updatePositionX} value={this.props.x} />
+        <Label>
+          Position Y: 
+        </Label>
+        <NumberInput onChange={this.updatePositionY} value={this.props.y} />
+        <Button type='submit'>Add</Button>
+      </Container>
     );
   }
 }
